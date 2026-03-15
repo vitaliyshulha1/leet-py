@@ -1,15 +1,24 @@
 # 1. Сначала объявляем класс (шаблон с LeetCode)
+from typing import List
+
+
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+   def containsDuplicate(self, nums: List[int]) -> bool:
         # Твоя логика решения
-        seen = {}
-        for i, n in enumerate(nums):
-            diff = target - n
-            if diff in seen:
-                return [seen[diff], i]
-            seen[n] = i
-        return []
+        seen = set()
+        for num in nums:
+            if num in seen:
+                return True
+            seen.add(num)
+
+        return False
 
 # 2. И только в самом конце создаем объект и вызываем метод
 sol = Solution()
-print(sol.twoSum([2, 7, 11, 15], 9))
+print(sol.containsDuplicate([1,2,3,1]))
+
+
+# seen = [] - список. for num in nums перебирает каждый элемент, получаем вложенный цикл.
+# seen = set() хеш таблица . в хеш таблице, каждое число в хеш списке хешируется. результат хэширования — это число (индекс), который указывает,
+#  в какой «корзине» (bucket) искать данные внутри выделенного массива памяти. токда компу не надо перебирать все числа, он СРАЗУ чере хеш знает где лежит число. 
+# но така таблица не может хранить одинаковые числа
