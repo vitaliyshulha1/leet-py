@@ -1,6 +1,6 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        seen = {} # we save all items with their index
+        seen = {} # we save all items with their index . this is dictionary
         for i, n in enumerate(nums):
             diff = target - n # substract num from target so we get second number
             if diff in seen: # check if the diff number is in already seen, if yes, return senn[index of diff] and i - current num
