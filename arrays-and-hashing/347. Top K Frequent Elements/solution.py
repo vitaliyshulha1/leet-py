@@ -6,7 +6,11 @@ from collections import Counter
 class Solution:
   def topKFrequent(self, nums: list[int], k: int) -> list[int]:
     count = Counter(nums)
-    return [x for x, _ in count.most_common(k)]
+    return [x for x, _ in count.most_common(k)] # это аналог 
+                                                #     result = []
+                                                # for x, _ in count.most_common(k):
+                                                #     result.append(x)
+                                                # return result
 
 # 2. И только в самом конце создаем объект и вызываем метод
 sol = Solution()
