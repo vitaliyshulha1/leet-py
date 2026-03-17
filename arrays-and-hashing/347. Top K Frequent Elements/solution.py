@@ -5,7 +5,7 @@ from collections import Counter
 
 class Solution:
   def topKFrequent(self, nums: list[int], k: int) -> list[int]:
-    count = Counter(nums)
+    count = Counter(nums) # Counter считает частоты. возваращет Dict.
     return [x for x, _ in count.most_common(k)] # это аналог 
                                                 #     result = []
                                                 # for x, _ in count.most_common(k):
@@ -14,7 +14,7 @@ class Solution:
 
 # 2. И только в самом конце создаем объект и вызываем метод
 sol = Solution()
-print(sol.topKFrequent([1,2,2,3,3,3], 2))
+print(sol.topKFrequent([1,2,2,3,3,3,7,7,7,7,7], 2))
 
 
 #  вначале надо создать Dictionary где ключ цифра, а значение частота с какой число встречается . на пайтоне Counter считает частоты
