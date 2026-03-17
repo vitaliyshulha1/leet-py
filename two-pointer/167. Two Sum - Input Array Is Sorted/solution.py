@@ -1,21 +1,21 @@
 class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
-        # Ставим два указателя: левый в начало, правый в конец
+        # we make two pointers, left[0] right[arraylength]
         left, right = 0, len(numbers) - 1
 
-        while left < right:
-            current_sum = numbers[left] + numbers[right]
+        while left < right: # while pointer dont meet
+            current_sum = numbers[left] + numbers[right] # sum current numbers
 
             if current_sum == target:
-                # Нашли! Возвращаем индексы +1 (задача 1-indexed)
+                # if current sum same as target - numer found.
                 return [left + 1, right + 1]
 
             elif current_sum < target:
-                # Сумма слишком мала → нужно число больше → двигаем левый вправо
+                # if sum is too small, we move LEFT poniter to right, to make sum bigger (because we know that array is sorted in non-decreasing order )
                 left += 1
 
             else:
-                # Сумма слишком велика → нужно число меньше → двигаем правый влево
+                # if sum is too big (bigger thank target) , we need to make sum smaller, so we move right pointer to left
                 right -= 1
 
 
