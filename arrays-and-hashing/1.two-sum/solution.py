@@ -5,7 +5,7 @@ class Solution:
             diff = target - n # substract num from target so we get second number
             if diff in seen: # check if the diff number is in already seen, if yes, return senn[index of diff] and i - current num
                 return [seen[diff], i]
-            seen[n] = i # just add curret number to seen
+            seen[n] = i # just add current number to seen, key is number itself(n), value  (i) is is index
         return []
 
 sol = Solution()
